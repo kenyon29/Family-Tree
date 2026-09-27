@@ -69,16 +69,19 @@ or hover-arrow menus) stay pretty stable even when labels move around.
    asked (as opposed to importing a file).
 2. Rename the new table to **Marriages** the same way you renamed the first
    one.
-3. It will again come with a default first column (often "Name") — rename
-   it to **Spouse 1** and change its field type to **Link to another
-   record** → **People**. (The very first column can't be deleted, only
-   renamed/retyped, which is fine here.)
+3. It will again come with a default first column (often "Name") —
+   **leave that one as-is** (rename it to something like "Marriage" if
+   you like, but don't change its type or delete it). Airtable doesn't
+   allow a table's very first column to be a "Link to another record"
+   field, so this leftover column just stays there unused — the app
+   never reads it.
 4. Delete any other sample columns Airtable added (Notes, Assignee,
    Status, etc.) the same way as before, then add these with the **+**
    button:
 
    | Field name      | Field type |
    |------------------|------------|
+   | Spouse 1           | Link to another record → **People** |
    | Spouse 2           | Link to another record → **People** |
    | Marriage Date        | Date |
    | Divorce Date          | Date |
