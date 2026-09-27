@@ -150,14 +150,7 @@ export default function TreeView({ index, collapsed, onToggleCollapsed, focusPer
             <line key={`d${i}`} x1={l.x1} y1={l.y1} x2={l.x2} y2={l.y2} className="descent-line" />
           ))}
           {layout.marriageLines.map((l, i) => (
-            <line
-              key={`m${i}`}
-              x1={l.x1}
-              y1={l.y1}
-              x2={l.x2}
-              y2={l.y2}
-              className={l.divorced ? 'marriage-line divorced' : 'marriage-line'}
-            />
+            <line key={`m${i}`} x1={l.x1} y1={l.y1} x2={l.x2} y2={l.y2} className="marriage-line" />
           ))}
           {layout.boxes.map((box) => (
             <PersonBox

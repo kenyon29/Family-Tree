@@ -7,7 +7,6 @@ export default function MarriageForm({ index, onClose, onSaved }) {
   const [spouse1Id, setSpouse1Id] = useState(null);
   const [spouse2Id, setSpouse2Id] = useState(null);
   const [marriageDate, setMarriageDate] = useState('');
-  const [divorceDate, setDivorceDate] = useState('');
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState('');
   const [extraPeople, setExtraPeople] = useState([]);
@@ -34,7 +33,6 @@ export default function MarriageForm({ index, onClose, onSaved }) {
         'Spouse 1': [spouse1Id],
         'Spouse 2': [spouse2Id],
         'Marriage Date': marriageDate || undefined,
-        'Divorce Date': divorceDate || undefined,
       };
       await createMarriage(fields);
       onSaved();
@@ -66,15 +64,9 @@ export default function MarriageForm({ index, onClose, onSaved }) {
             onChange={setSpouse2Id}
             onQuickAdd={() => setQuickAddTarget('spouse2')}
           />
-          <div className="field-row">
-            <div className="field">
-              <label>Marriage date</label>
-              <input type="date" value={marriageDate} onChange={(e) => setMarriageDate(e.target.value)} />
-            </div>
-            <div className="field">
-              <label>Divorce date</label>
-              <input type="date" value={divorceDate} onChange={(e) => setDivorceDate(e.target.value)} />
-            </div>
+          <div className="field">
+            <label>Marriage date</label>
+            <input type="date" value={marriageDate} onChange={(e) => setMarriageDate(e.target.value)} />
           </div>
           {error && <div className="form-error">{error}</div>}
           <div className="modal-actions">

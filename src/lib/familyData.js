@@ -36,7 +36,6 @@ export function normalizeMarriage(record) {
     spouse1Id: firstLinked(f['Spouse 1']),
     spouse2Id: firstLinked(f['Spouse 2']),
     marriageDate: f['Marriage Date'] || null,
-    divorceDate: f['Divorce Date'] || null,
   };
 }
 

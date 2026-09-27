@@ -133,7 +133,6 @@ export function buildLayout(
     for (const box of node.boxes) {
       boxes.push({ ...box, w: boxW, h: boxH, hasHiddenChildren: box.isPartner ? false : node.hasHiddenChildren });
     }
-    const visiblePartners = node.partners.filter((p) => !p.renderedElsewhere);
     for (let i = 0; i < node.boxes.length - 1; i++) {
       const a = node.boxes[i];
       const b = node.boxes[i + 1];
@@ -142,7 +141,6 @@ export function buildLayout(
         y1: a.y + boxH / 2,
         x2: b.x,
         y2: b.y + boxH / 2,
-        divorced: !!visiblePartners[i]?.marriage?.divorceDate,
       });
     }
 

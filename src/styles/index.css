@@ -181,10 +181,6 @@ button {
   stroke-width: 1.5;
 }
 
-.marriage-line.divorced {
-  stroke-dasharray: 4 3;
-}
-
 .person-box {
   cursor: pointer;
 }

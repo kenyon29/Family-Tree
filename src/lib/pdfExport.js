@@ -157,15 +157,7 @@ async function buildTreeSvg(layout, index, { includeExtras }) {
   }
   for (const l of layout.marriageLines) {
     root.appendChild(
-      el('line', {
-        x1: l.x1,
-        y1: l.y1,
-        x2: l.x2,
-        y2: l.y2,
-        stroke: '#8a7a5c',
-        'stroke-width': 1.5,
-        'stroke-dasharray': l.divorced ? '4 3' : undefined,
-      })
+      el('line', { x1: l.x1, y1: l.y1, x2: l.x2, y2: l.y2, stroke: '#8a7a5c', 'stroke-width': 1.5 })
     );
   }
   for (const box of layout.boxes) {
