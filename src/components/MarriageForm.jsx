@@ -6,7 +6,6 @@ import QuickAddPersonModal from './QuickAddPersonModal.jsx';
 export default function MarriageForm({ index, onClose, onSaved }) {
   const [spouse1Id, setSpouse1Id] = useState(null);
   const [spouse2Id, setSpouse2Id] = useState(null);
-  const [marriageDate, setMarriageDate] = useState('');
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState('');
   const [extraPeople, setExtraPeople] = useState([]);
@@ -32,7 +31,6 @@ export default function MarriageForm({ index, onClose, onSaved }) {
       const fields = {
         'Spouse 1': [spouse1Id],
         'Spouse 2': [spouse2Id],
-        'Marriage Date': marriageDate || undefined,
       };
       await createMarriage(fields);
       onSaved();
@@ -64,10 +62,6 @@ export default function MarriageForm({ index, onClose, onSaved }) {
             onChange={setSpouse2Id}
             onQuickAdd={() => setQuickAddTarget('spouse2')}
           />
-          <div className="field">
-            <label>Marriage date</label>
-            <input type="date" value={marriageDate} onChange={(e) => setMarriageDate(e.target.value)} />
-          </div>
           {error && <div className="form-error">{error}</div>}
           <div className="modal-actions">
             <button type="button" className="btn-secondary" onClick={onClose}>

@@ -35,7 +35,6 @@ export function normalizeMarriage(record) {
     id: record.id,
     spouse1Id: firstLinked(f['Spouse 1']),
     spouse2Id: firstLinked(f['Spouse 2']),
-    marriageDate: f['Marriage Date'] || null,
   };
 }
 
@@ -122,14 +121,14 @@ export function buildIndexFromNormalized(people, marriages) {
       }
     }
 
-    // Sort: partnered groups (with a real partnerId) first, by marriage date then name;
+    // Sort: partnered groups (with a real partnerId) first, by partner name;
     // "solo" (unknown other parent) groups last.
     return [...partnerMap.values()].sort((a, b) => {
       if (!a.partnerId && b.partnerId) return 1;
       if (a.partnerId && !b.partnerId) return -1;
-      const da = a.marriage?.marriageDate || '';
-      const db = b.marriage?.marriageDate || '';
-      return da.localeCompare(db);
+      const na = a.partnerId ? fullName(peopleById.get(a.partnerId)) : '';
+      const nb = b.partnerId ? fullName(peopleById.get(b.partnerId)) : '';
+      return na.localeCompare(nb);
     });
   }
 

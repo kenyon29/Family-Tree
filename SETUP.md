@@ -83,14 +83,14 @@ or hover-arrow menus) stay pretty stable even when labels move around.
    |------------------|------------|
    | Spouse 1           | Link to another record → **People** |
    | Spouse 2           | Link to another record → **People** |
-   | Marriage Date        | Date |
 
-   You do **not** need a "Children" field anywhere — the app figures out
-   children automatically from each person's Father/Mother links in the
-   People table. You also don't need a "Divorce Date" field — only married
-   couples need a Marriages row at all (people who aren't married still
-   show as a couple on the tree automatically, based on their children's
-   shared Father/Mother links), and the app no longer tracks divorce.
+   That's it — just those two fields. You do **not** need a "Children"
+   field anywhere (the app figures out children automatically from each
+   person's Father/Mother links in the People table), and you don't need
+   "Marriage Date" or "Divorce Date" fields — only married couples need a
+   Marriages row at all (people who aren't married still show as a couple
+   on the tree automatically, based on their children's shared
+   Father/Mother links), and the app doesn't track marriage/divorce dates.
 
 5. Back in **People**, add a few test people so you have something to look
    at once the site is live (First Name is the only field you must fill in).
